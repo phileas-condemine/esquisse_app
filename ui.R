@@ -2,6 +2,7 @@
 
 tagList(
   dashboardPage(
+    # header = dashboardHeader(title = "EXCEL TO ESQUISSE",disable=T
     tags$header(class = "main-header", span(class = "logo",style="background: #1263b3;", "Zonage ARS"),
                 tags$nav(class = "navbar navbar-static-top",style="background: #0253a3;",
                          role = "navigation", span(shiny::icon("bars"), style = "display:none;"),
@@ -18,21 +19,21 @@ tagList(
                                              a(tags$i(class="fa icon_drees text-success vert_center"),"Développeur",href="http://drees.solidarites-sante.gouv.fr/etudes-et-statistiques/",
                                                target="_blank",  rel="noopener noreferrer",style="padding-top:5px;padding-bottom:5px")),
                                      # https://resizeimage.net/
-                                     
+
                                      tags$li(id="Github",
-                                             a(tags$i(class="fa icon_github text-success vert_center"),"Code Source",href="https://gitlab.com/DREES_code/formulaire_zonage_ars",
+                                             a(tags$i(class="fa icon_github text-success vert_center"),"Code Source",href="https://gitlab.com/DREES_code/esquisse_app",
                                                target="_blank",  rel="noopener noreferrer",style="padding-top:5px;padding-bottom:5px")),
                                      tags$li(actionLink("logout","Déconnexion",icon=icon("sign-out-alt")),class= 'dropdown')
                              )))
-                
+
                 ,includeCSS("www/my_styles.css")
                 # https://stackoverflow.com/questions/17966089/how-to-replace-and-with-lt-and-gt-with-jquery-or-js
                 ,includeScript("www/custom_scripts.js")
-                
-                
-                
-                
-                
+
+
+
+
+
     ),
     
     dashboardSidebar(collapsed = F,
@@ -65,7 +66,10 @@ tagList(
                     esquisse_ui(
                       id = "esquisse", 
                       header = FALSE # dont display gadget title
-                    )
+                    ),
+                    tags$br(),
+                    tags$br(),
+                    tags$br()
                   )),
         tabItem(tabName = "Output",
                     title = "output",
@@ -78,6 +82,5 @@ tagList(
                   )
         )
     )
-  ),
-  includeHTML("www/footer_accueil.html")
+  )
 )
