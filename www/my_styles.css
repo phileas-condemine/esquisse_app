@@ -1,0 +1,204 @@
+#zonage_dt td {
+  text-align: center;
+}
+
+#zonage_dt th {
+    text-align: center;
+}
+
+#zonage_dt input[type='search'] {
+    text-align: center;
+    padding-right:10px;
+    padding-left:10px;
+
+}
+
+body {
+  font-family: "Palatino Linotype";
+}
+
+.historical_choice {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, .7);
+}
+
+.en_vigueur_choice {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(0, 0, 255, .7);
+}
+
+.saved_choice {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox;    /* Firefox */
+  -ms-appearance: checkbox;     /* not currently supported */
+}
+
+
+/*
+input[type="radio"][title]:hover:after {
+    font-style: italic;
+    color:gray;
+    border-radius: 6px;
+    text-align: center;
+    width: 250px;
+    height:50px;
+}
+*/
+
+
+
+/* input avec ? à l'intérieur car temporaire */
+input[type="radio"].temp_minoritaire{
+    -webkit-appearance: initial;
+    appearance: initial;
+    background: white;
+    width: 12px;
+    height: 12px;
+    border: none;
+    position: relative;
+    outline: 1px solid #1e5180
+
+}
+
+input[type="radio"].temp_minoritaire:checked:after {
+    content: "\003F";
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+
+#gauge_and_map {
+  position:fixed;
+  top:100px;
+  right:10px;
+}
+
+.shiny-output-error:before {
+  visibility: visible;
+  content: "L'application a rencontré une erreur. Merci de contacter l'administrateur drees-zonages-ars@sante.gouv.fr"; 
+}
+
+.vert_center {
+  vertical-align: middle;
+}
+
+.icon_drees {
+    background: url('https://gitlab.com/DREES_code/public/charte_drees/raw/master/img/drees_icon.jpg');
+    height: 40px;
+    width: 69px;
+    /* Other styles here */
+}
+
+.icon_ministere {
+    background: url('https://gitlab.com/DREES_code/public/charte_drees/raw/master/img/mss_icon2.jpg');
+    height: 40px;
+    width: 69px;
+    /* Other styles here */
+}
+
+.icon_github {
+    background: url('https://gitlab.com/DREES_code/public/charte_drees/raw/master/img/github_icon2.png');
+    height: 40px;
+    width: 40px;
+    /* Other styles here */
+}
+
+
+.drees_footer{
+  background: #0253a3;
+  background-size: contain;
+  width:100%;
+  height:100%;
+  margin-bottom: 0px;
+}
+ 
+ 
+/* Pour mettre la scrollX en haut !!!
+.dataTables_scrollBody {
+    transform:rotateX(180deg);
+}
+.dataTables_scrollBody table {
+    transform:rotateX(180deg);
+}
+
+
+*/
+
+ 
+/*
+.gauge > svg:nth-child(8) {
+  font-size: 15px;
+}
+
+.gauge > svg:nth-child(9) {
+  font-size: 20px;
+}
+
+*/
+
+#loading {
+      margin-left:100px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: inline-block;
+      border: 3px solid #f3f3f3; 
+      border-top: 3px solid #3498db; 
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+.pulse {
+  position: relative;
+}
+.pulse:before, .pulse:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18,99,179, 0.4);
+  border-radius: 50%;
+  width: 300px;
+  height: 20px;
+  opacity: 0;
+  margin: auto;
+}
+.pulse:before {
+  animation: pulse 1.5s infinite linear;
+}
+.pulse:after {
+  animation: pulse 2s .4s infinite linear;
+}
+.pulse:hover:before, .pulse:hover:after {
+  display: none;
+}
